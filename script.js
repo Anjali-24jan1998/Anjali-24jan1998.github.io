@@ -1,7 +1,7 @@
 function validate() {  
-	var result = "";	
+	var PhNumber = "";
+	var result="";	
 	result += validateName(); 	
-	result += validateEmail();
 	result += generateOTP();
 	result += number();
 	
@@ -18,12 +18,8 @@ function phoneFormat(input) {//returns (###) ###-####
     if (size>0) {input="("+input}
     if (size>3) {input=input.slice(0,4)+") "+input.slice(4)}
     if (size>6) {input=input.slice(0,9)+"-" +input.slice(9)}
-	var phone_input = document.getElementById("phone");
-	phone_input.addEventListener('input', () => {
-		phone_input.checkValidity();
-	  })
 
-    return size;
+    return input;
 }
 
 function phonenumber(inputtxt)

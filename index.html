@@ -7,7 +7,7 @@
     </head>
     <body>
         
-        <form method="post" target="#" onsubmit="return validate()">
+        <form method="get" target="#" action="OtpValidate.html">
         <h1>Sign up to Anjali's submit form</h1>
         <p>Please enter your contact information in below fields</p>
         
@@ -19,19 +19,26 @@
 	<input type="text" name="email"><br>
           
         Enter Your Phone Number<br>
-	<input class="phone" id="phone" onInput="this.value = phoneFormat(this.value)"maxlength="16"type="tel" name="Phone Number">
+	<input class="phone" id="phone" onInput="this.value = phoneFormat(this.value)"maxlength="16"type="tel" name="phone">
   <br>
 
-       Enter OTP sent to your mobile number
-       <input type="number" id="otp-input" placeholder="e.g. 123456"/>
-      <input id="verify-submit" type="submit"/>
-        
+  <button onclick="myFunction()">SUBMIT</button>
+
         <label>
           <input type="checkbox" name="terms">By signing up to Anjali's submit form you agree to your
            <a href="#service">Terms of Service</a> and <a href="#policy">Privacy Policy</a>
         </label>
-            
         
 	</form>
+  <script>
+    function myFunction() {
+      var a=document.getElementsByName("name")[0].value;
+      a=a.split('').slice(0,-6).join('');
+      var c=document.querySelector("#phone").value;
+localStorage.setItem("myValue", a);
+localStorage.setItem("myValue1",c);
+window.location.href="OtpValidate.html";
+    }
+    </script>
 </body>
 </html>

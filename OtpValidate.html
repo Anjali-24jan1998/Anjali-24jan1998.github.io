@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>THANK YOU !!! </title>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+        <link href="index.html"/>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+<script>
+    var b = localStorage.getItem("myValue");
+    var d= localStorage.getItem("myValue1");
+    alert("Thank you for your enquiry"+' '+ b+'!!!'+' '+"A Four Digit OTP has been sent to your mobile number"+' '+d+'.'+' '+"Please enter Four digit OTP number to continue");
+var resetValue =0;
+localStorage.setItem("myValue", resetValue);
+generateOTP();
+function generateOTP() {
+          
+          // Declare a digits variable 
+          // which stores all digits
+          var digits = '0123456789';
+          let OTP = '';
+          for (let i = 0; i < 4; i++ ) {
+              OTP += digits[Math.floor(Math.random() * 10)];
+          }
+           console.log(OTP);
+      }
+
+      function validateOTP(){
+               alert(OTP);   
+               return validateOTP;        
+           }
+</script>
+<form method="get" action="OtpValidate.html" onsubmit= "validateOTP()"/>
+Please Enter the OTP :
+<input type="number" id="otp-input" placeholder="e.g. 123456" minlength="1" maxlength="4"  />
+      <input id="verify-submit" type="submit" class="button" value= "Submit"  />
+</form>        
+    </body>
+</html>
